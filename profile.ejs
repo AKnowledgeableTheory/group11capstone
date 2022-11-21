@@ -1,0 +1,67 @@
+<%- include('partials/header') -%>
+<head>
+  <div class="profile">
+  <h1 class="text-4xl mb-4">Welcome <%= user.nickname %>!</h1>
+
+  <% if (user.picture) { %>
+    <img class="block py-3" src="<%= user.picture %>" width="300">
+  <% } %>
+
+  <h2 class="weatherpage">Continue <a href="weather.ejs">here</a> for your weather info.</h2>
+  </div>
+
+  <p class="py-3">
+    This is the content of <code class="bg-gray-200"><%= user.name %></code> profile page.<br>
+    <strong>Note:</strong> <code class="bg-gray-200">_raw</code> and <code class="bg-gray-200">_json</code> properties have been omitted.
+  </p>
+  
+  <pre class="block"><%= userProfile %></pre> 
+
+  <style>
+    body {
+        
+      background: url(https://www.pixelstalk.net/wp-content/uploads/2016/10/Cloud-birds-wallpaper-desktop-screensaver.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+
+    }
+    p.py-3{
+      visibility: hidden;
+    }
+    pre.block{
+      visibility: hidden;
+    }
+    div.profile{
+      text-align: center;
+      padding-top: 5%;
+    }
+    img{
+      display: block;
+      width:auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2.weatherpage{
+      font-size: larger;
+      font-weight: bold;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+    a{
+      color:blue;
+    }
+    </style>
+    
+    
+
+</head>
+
+<%- include('partials/footer') -%>
+
+
